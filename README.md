@@ -1,10 +1,18 @@
-# archadian-assessment
-A simple PHP code to upload the file into the folder and read all data from the Excel file 
+# Archadian Assessment
+## _by Nisa Sabrina_
 
-1. DOWNLOAD COMPOSER
-https://getcomposer.org/download/
+A simple PHP code to upload the file into the folder and read all data from the Excel file
 
-2. DOWNLOAD PHPSPREADSHEET USING COMPOSER
+## Installation
+
+RUN USING ANY SERVER
+
+Download [Composer](https://getcomposer.org/download/).
+
+Install PHPSpreadsheet using Composer.
+
+```sh
 composer require phpoffice/phpspreadsheet
+```
 
-3. RUN USING ANY SERVER
+Run using any server
