@@ -32,13 +32,13 @@ if (isset($_POST["submit"])) {
 
       <div class="row">
         <label class="col-lg-12">Receiver Code: </label>
-        <input class="col-lg-12 mx-2" type="text" placeholder="RECEIVER" />
+        <input class="col-lg-12 mx-2" type="text" value="RECEIVER" />
         <p class="col-lg-12"><small>Please change before file select.</small></p>
       </div>
 
       <div class="row">
         <label class="col-lg-12">Callsign Code:</label>
-        <input class="col-lg-12 mx-2" type="text" placeholder="XXXXX" />
+        <input class="col-lg-12 mx-2" type="text" value="XXXXX" />
         <p class="col-lg-12"><small>Please change before file select.</small></p>
       </div>
 
@@ -60,14 +60,15 @@ if (isset($_POST["submit"])) {
             $reader->setReadDataOnly(true);
             $spreadsheet = $reader->load($filename);
             $worksheet = $spreadsheet->getActiveSheet();
+            $edi = "";
             foreach ($worksheet->getRowIterator() as $row) {
               $cellIterator = $row->getCellIterator();
               $cellIterator->setIterateOnlyExistingCells(false);
               foreach ($cellIterator as $cell) {
-                echo
-                $cell->getValue();
+                $edi .= $cell->getValue() . "+";
               }
             }
+            echo $edi;
           }
           ?>
         </textarea>
